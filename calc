@@ -11,6 +11,10 @@ int main()
     int resto;
     float risultato; //float per i numeri grandi
     char operazione; //char per lo switch
+    int base, esponente, potenza;
+    double radice;
+    int numeror;
+    int sceltar, i;
 
             {
                 system("cls"); //pulisce schermata (reset program)
@@ -18,8 +22,8 @@ int main()
                 cout<<" :: Created By SteMac ::"<<endl;
                 cout<<" :::::::::::::::::::::::"<<endl;
                 cout<<" :: 1.CALCOLATRICE"<<endl;
-                cout<<" :: 2.coming soon(elevamento a potenza)"<<endl;
-                cout<<" :: 3.coming soon(radice quadrata e cubica)"<<endl;
+                cout<<" :: 2.ELEVAMENTO A POTENZA"<<endl;
+                cout<<" :: 3.RADICE QUADRATA E CUBICA"<<endl;
                 cout<<" :: 4.ESCI"<<endl;
                 cout<<" :: > "; cin>>scelta;
 
@@ -50,9 +54,72 @@ int main()
                             	system("pause>nul");
                             	break;
                         	}
-					}
-                    if (scelta==4)
+                    }
+                    
+					if (scelta==2)
                     {
+                    	cout<<"Inserisci base: "<<endl;
+                    	cout<<" :: > ";
+						cin>>base;
+                    	cout<<"Inserisci esponente"<<endl;
+                    	cout<<" :: > ";
+						cin>>esponente;
+                    	potenza=pow(base,esponente);
+                    	cout<<"\n"<<" :: "<<base<<" ELEVATO "<<esponente<<" = "<<potenza<<"\n\n"<<" :: Premi un tasto";
+                    	system("pause>nul");
+					}
+					
+					if (scelta==3)
+					{
+/*						cout<<" :: 1.RADICE QUADRATA"<<endl;
+						cout<<" :: 2.RADICE CUBICA"<<endl;
+						cout<<" :: > ";
+						cin>>sceltar;
+						switch (sceltar)
+							{
+								case '1':
+								radice=sqrt(numeror);
+								cout<<"Inserisci numero: "<<endl;
+								cout<<" :: > ";
+								cin>>numeror;
+								cout<<"\n"<<" :: "<<"LA RADICE QUADRATA DI "<<numeror<<" E' "<<radice<<endl;
+								system("pause>nul");
+								break;
+								case '2':
+								cout<<"Inserisci numero: "<<endl;
+								cout<<" :: > ";
+								cin>>numeror;
+								cout<<"LA RADICE CUBICA DI "<<numeror<<" E' "<<radice<<endl;
+								system("pause>nul");
+								break;
+							}*/
+						cout<<" :: 1.RADICE QUADRATA"<<endl;
+						cout<<" :: 2.RADICE CUBICA"<<endl;
+						cout<<" :: > ";
+						cin>>sceltar;
+						
+						if (sceltar==1)
+						{
+							cout<<"Inserisci numero: "<<endl;
+							cout<<" :: > ";
+							cin>>numeror;
+							radice=sqrt(numeror);
+							cout<<"\n"<<" :: "<<"LA RADICE QUADRATA DI "<<numeror<<" E' "<<radice<<"\n\n"<<" :: Premi un tasto";
+							system("pause>nul");	
+						}
+						if (sceltar==2)
+						{
+							cout<<"Inserisci numero: "<<endl;
+							cout<<" :: > ";
+							cin>>numeror; 
+							radice=pow(numeror, 1.0/3); // modificando il 3 con un numero (es: 4) posso fare radice quadra, quinta, sesta...
+							cout<<"\n"<<"LA RADICE CUBICA DI "<<numeror<<" E' "<<radice<<"\n\n"<<" :: Premi un tasto";
+							system("pause>nul");		
+						}
+					}
+					                    
+					if (scelta==4)
+                    			{
 						return 0;
 					}
 			}
